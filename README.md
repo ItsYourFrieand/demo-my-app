@@ -1,6 +1,6 @@
 # my_app
 
-A new Flutter project.
+Тест гитхаб
 
 ## Getting Started
 

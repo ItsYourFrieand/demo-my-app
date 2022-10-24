@@ -2,23 +2,12 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-
-  counterNum();
+  randomFun(1, 25);
 }
 
-
-
-void counterNum () {
-  var list1 = [];
-  int a = 0;
-  while (a < 15 ){
-  a++;
-  list1.add(a);
-  }
-  print("Первый элемент списка: ${list1.first}");
-  print("Последний элемент списка: ${list1.last}");
-  print("Длина списка: ${list1.length}");
-  print(list1.join(", "));
+void randomFun (int a, int b) {
+  int c = a * b;
+  print (c);
 }
 
 

@@ -2,13 +2,25 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-  randomFun(1, 25);
+  Person sam = Person("Sam", 28);
+  sam.display();
+  Person bob = Person.undefined();
+  bob.display();
+
 }
 
-void randomFun (int a, int b) {
-  int c = a * b;
-  print (c);
+class Person{
+  String name = "";
+  int age = 0;
+  Person.undefined (): this("undefined", 25);
+  Person (this.name, this.age);
+
+  void display (){
+    print ("Name: $name Age: $age");
+  }
 }
+
+
 
 
 class MyApp extends StatelessWidget {

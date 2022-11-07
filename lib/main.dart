@@ -2,11 +2,39 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-  Person sam = Person("Sam", 28);
-  sam.display();
-  Person bob = Person.undefined();
-  bob.display();
+Yamogichi exelent = Yamogichi();
+exelent.mind = "отлично";
+exelent.howLow();
 
+Writer sam = Writer("Sam",23,17);
+sam.books();
+sam.booksAll();
+
+}
+
+class Writer {
+  String? name;
+  int begin;
+  int end;
+
+
+  Writer (this.name, this.begin, this.end);
+
+  void books (){
+    print("Начато книг: $begin \nЗакончено книг: $end");
+  }
+  void booksAll (){
+  int allB = begin + end;
+  print("У $name написано:\n$allB книг");
+  }
+}
+
+class Yamogichi {
+  String? mind;
+
+  void howLow (){
+print ("Ты могучий на $mind");
+  }
 }
 
 class Person{

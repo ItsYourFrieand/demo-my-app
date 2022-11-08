@@ -1,51 +1,34 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-Yamogichi exelent = Yamogichi();
-exelent.mind = "отлично";
-exelent.howLow();
-
-Writer sam = Writer("Sam",23,17);
-sam.books();
-sam.booksAll();
-
-}
-
-class Writer {
-  String? name;
-  int begin;
-  int end;
-
-
-  Writer (this.name, this.begin, this.end);
-
-  void books (){
-    print("Начато книг: $begin \nЗакончено книг: $end");
-  }
-  void booksAll (){
-  int allB = begin + end;
-  print("У $name написано:\n$allB книг");
-  }
-}
-
-class Yamogichi {
-  String? mind;
-
-  void howLow (){
-print ("Ты могучий на $mind");
-  }
+ Person sam = Person("Sam", 20);
+ sam.display();
+ mainPerson bob = mainPerson("Bob", 18, "PurplePlane");
+ bob.display();
 }
 
 class Person{
   String name = "";
   int age = 0;
-  Person.undefined (): this("undefined", 25);
   Person (this.name, this.age);
 
   void display (){
     print ("Name: $name Age: $age");
   }
+}
+class mainPerson extends Person {
+String company = "";
+
+mainPerson (name, age, this.company) : super (name, age);
+
+@override
+  void display (){
+  super.display();
+  print("Company: $company");
+}
 }
 
 

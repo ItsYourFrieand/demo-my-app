@@ -1,36 +1,33 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
- Person sam = Person("Sam", 20);
- sam.display();
- mainPerson bob = mainPerson("Bob", 18, "PurplePlane");
- bob.display();
+  InfoFull bob = InfoFull("Дизайнер", "Bob", 25, "Google");
+  bob.showInfo();
 }
 
-class Person{
-  String name = "";
-  int age = 0;
-  Person (this.name, this.age);
+class InfoPerson {
+  final String name;
+  final int age;
+  final String company;
 
-  void display (){
-    print ("Name: $name Age: $age");
+  InfoPerson (this.name, this.age, this.company);
+
+  void showInfo() {
+    print("Имя: $name Возраст: $age Компания: $company");
   }
 }
-class mainPerson extends Person {
-String company = "";
 
-mainPerson (name, age, this.company) : super (name, age);
+class InfoFull extends InfoPerson {
+  String prof;
+  InfoFull (this.prof, name, age, company) : super (name, age, company);
 
-@override
-  void display (){
-  super.display();
-  print("Company: $company");
+  @override
+  void showInfo(){
+    super.showInfo();
+    print("Должность: $prof");
+  }
 }
-}
-
 
 
 

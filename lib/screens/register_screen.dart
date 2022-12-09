@@ -6,7 +6,6 @@ import 'authorization_screen.dart';
 
 class ScreenRegister extends StatefulWidget {
 
-
   const ScreenRegister({super.key});
 
   @override
@@ -22,7 +21,7 @@ class _ScreenRegisterState extends State<ScreenRegister> {
 
  void submit (){
    final form = formKey.currentState;
-   form == null ? "No text on form" : form.save();
+   form == null ? "" : form.save();
    performLogin();
  }
 
@@ -53,7 +52,7 @@ class _ScreenRegisterState extends State<ScreenRegister> {
           key: formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: [
               TextFormField(
                 decoration: UtilsMaterial.decorationFieldTextLogin,
                 style: UtilsMaterial.sizeTextBlack,
@@ -76,14 +75,6 @@ class _ScreenRegisterState extends State<ScreenRegister> {
                 ),
                 onPressed: submit,
                 child: const Text("Register", style: TextStyle(color: Colors.black),),
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                  MaterialStateProperty.resolveWith((states) => Colors.white),
-                ),
-                onPressed: (){},
-                child: const Text("Show Login", style: TextStyle(color: Colors.black),),
               ),
 
             ],

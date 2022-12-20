@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/authorization_screen.dart';
-
+import 'package:my_app/screens/news_screen.dart';
+import '/screens/authorization_screen.dart';
 import 'register_screen.dart';
 
 class StartApp extends StatelessWidget {
@@ -10,7 +10,12 @@ class StartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ScreenRegister(),
+      routes: {
+        '/register' : (context) => const ScreenRegister(),
+        '/auth' : (context) => const ScreenAuthorization(),
+        '/news' : (context) => const NewsScreen()
+      },
+      initialRoute: '/register',
     );
   }
 }
